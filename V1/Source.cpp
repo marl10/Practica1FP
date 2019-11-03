@@ -32,12 +32,15 @@ int main() {
 
 	tablero = fichaToString(aleat(), aleat());
 	eleccion = mostrarMenu();
-
+	/*
+		habia una vez una.... 
+	*/
 	while (eleccion != 0) {
 
 		if (eleccion == 1) {
 			if (puedoPonerIzq(tablero, n1, n2)) {
 				tablero = ponerIzq(tablero, n1, n2);
+
 				fichasColocadas++;
 			}
 		}
@@ -55,6 +58,7 @@ int main() {
 			fichasRobadas++; 
 		}
 		mostrarTablero(n1, n2, tablero, fichasColocadas, fichasRobadas);
+
 		eleccion = mostrarMenu(); 
 	}
 	
@@ -72,12 +76,8 @@ int mostrarMenu() {
 	cin >> opcion; 
 
 	if (opcion < 0 || opcion > 3) {
-	
 		mostrarMenu(); 	
 	}
-	
-
-
 	return opcion;
 }
 
@@ -116,8 +116,13 @@ void mostrarTablero(short int fichaN1, short int fichaN2, string tablero, int nu
 	cout << "Fichas colocadas: " << numColocadas << " - Fichas robadas: " << numRobadas << endl; 
 	cout<<"Ficha jugador: " << fichaToString(fichaN1, fichaN2) << endl;
 	
+}
+
+void ayuda() {
 
 }
+
+
 
 void mostrarCabeceraTablero() {
 	cout << "  ------------------------- " << endl;
